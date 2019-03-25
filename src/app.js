@@ -23,6 +23,8 @@ app.get('/weather', (req, res) => {
                 return res.send(forecastErr)
             }
 
+            res.set('Access-Control-Allow-Origin', '*')
+
             res.send({
                 forecast: forecastData,
                 location: location,
